@@ -1,0 +1,11 @@
+Prokka 
+=>prokka_loop.pyで解析
+
+Roary
+roary -e --mafft -p 32 -r -qc -cd 99 --group_limit 500000 -f output_dir *.gff
+
+Iqtree2
+iqtree2 -s core_gene_alignment.aln -B 1000 -m GTR+I+G -T 32 --threads-max 32
+
+ClonalFrame
+ClonalFrameML core_gene_alignment.aln.treefile core_gene_alignment.aln output_core_prefix -emsim 100
